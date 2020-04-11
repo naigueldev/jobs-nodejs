@@ -1,8 +1,5 @@
 import Queue from "bull";
 import redisConfig from "../../config/redis";
-
-import RegistrationMail from "../../app/jobs/RegistrationMail";
-
 import * as jobs from "../jobs";
 
 const queues = Object.values(jobs).map((job) => ({
@@ -25,6 +22,7 @@ export default {
       queue.bull.on("failed", (job, err) => {
         console.log("Job Failed", queue.key, job.data);
         console.log(err);
+        bugsnagClient.notify(new Error(err));
       });
     });
   },

@@ -9,6 +9,8 @@
     "dev:queue": "nodemon src/queue.js"
   },
   "dependencies": {
+    "@bugsnag/js": "^6.5.2",
+    "@bugsnag/plugin-express": "^6.5.1",
     "bull": "^3.13.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
