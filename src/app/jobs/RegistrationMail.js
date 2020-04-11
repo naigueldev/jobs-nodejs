@@ -8,8 +8,10 @@ export default {
     await Mail.sendMail({
       from: "Jobs Test <job-test@fakemail.com.br>",
       to: `${user.name} <${user.email}>`,
-      subject: "User register",
-      html: `Hi, ${user.name}, wellcome to Fake Company :)`,
+      subject: "User register Job",
+      html: `Hi, ${user.name}, wellcome to Fake Company :) ... ${JSON.stringify(
+        user
+      )}`,
     });
   },
 };
