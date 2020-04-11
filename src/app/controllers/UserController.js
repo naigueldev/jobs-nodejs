@@ -10,8 +10,7 @@ export default {
       password,
     };
 
-    await Queue.add({ user });
-    // Send mail
+    await Queue.add("RegistrationMail", { user });
     return res.json(user);
   },
 };
