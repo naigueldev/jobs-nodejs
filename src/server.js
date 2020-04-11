@@ -7,7 +7,10 @@ const app = express();
 app.use(express.json());
 
 app.post("/users", UserController.store);
+app.get("/users", (req, res) => {
+  res.json("testing");
+});
 
 app.listen(3333, () => {
-  console.log("Server is running on localhost:3333");
+  console.log("Server is running");
 });
